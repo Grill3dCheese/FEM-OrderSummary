@@ -7,6 +7,10 @@
   <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap" rel="stylesheet">
 
   <title>Frontend Mentor | Order summary card</title>
 
@@ -15,24 +19,27 @@
 <body>
   <main>
     <article class="order-card">
-      <img class="order-card__img" src="images/illustration-hero.svg"
+      <img src="images/illustration-hero.svg"
         alt="A person swinging their hands in the air in joy, with a smile on their face, while listening to music. City skyline behind them with music notes floating about.">
       <div class="order-card__content">
-        <h1>Order Summary</h1>
-        <p>You can now listen to millions of songs, audiobooks, and podcasts on any
-          device anywhere you like!</p>
-        <div class="flex-group">
-          <div class="order-card__musicIcon">
+        <div class="order-card__introText">
+          <h1>Order Summary</h1>
+          <p>You can now listen to millions of songs, audiobooks, and podcasts on any
+            device anywhere you like!</p>
+        </div>
+        <div class="order-card__detailsContainer">
+          <div class="order-card__details">
             <img src="images/icon-music.svg" alt="An icon of a music note">
+            <div class="order-card__plan">
+              <p class="order-card__planType">Annual Plan</p>
+              <p class="order-card__planPrice">$59.99/year</p>
+            </div>
           </div>
-          <p class="order-card__annualPrice">
-            <span>Annual Plan</span><br>$59.99/year
-          </p>
           <a href="#" class="order-card__changePlan">Change</a>
         </div>
+        <button class="order-card__Submit">Proceed to Payment</button>
+        <a href="#" class="order-card__cancelOrder">Cancel Order</a>
       </div>
-      <button class="order-card__Submit">Proceed to Payment</button>
-      <a href="#" class="order-card__cancelOrder">Cancel Order</a>
     </article>
   </main>
   <div class="attribution">
