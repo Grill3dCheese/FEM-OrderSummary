@@ -98,6 +98,7 @@ body {
 .order-card {
   --content-padding: 3rem;
 
+  margin-bottom: 3rem;
   max-width: 450px;
   background: var(--clr-neutral-100);
   border-radius: 1.5rem;
@@ -107,7 +108,7 @@ body {
 }
 
 .order-card__content {
-  padding: var(--content-padding);
+  padding: 2rem 1.75rem;
 }
 
 .order-card__introText {
@@ -116,23 +117,25 @@ body {
 
 .order-card__introText h1 {
   font-weight: var(--fw-black);
-  font-size: 1.75rem;
+  font-size: clamp(1.25rem, calc(-0.25rem + 6.4vw), 1.75rem);
   margin-bottom: 1rem;
 }
 
 .order-card__introText p {
   color: var(--clr-neutral-400);
+  font-size: clamp(1rem, calc(-0.4rem + 2vw), 1rem);
+  padding: 0 0.5rem;
 }
 
 .order-card__detailsContainer {
   display: flex;
   gap: 1.5rem;
-  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   background: var(--clr-neutral-200);
-  padding: 1.5rem;
+  padding: 1rem;
   border-radius: 1rem;
+  margin-bottom: 2rem;
 }
 
 .order-card__details {
@@ -151,16 +154,52 @@ body {
 .order-card__changePlan {
   color: var(--clr-secondary-100);
   font-weight: var(--fw-bold);
+  transition: opacity 0.5s;
 }
 
 .order-card__changePlan:hover {
-  color: var(--clr-secondary-100);
   opacity: 0.5;
   text-decoration: none;
 }
 
-.order-card__Submit {
+.order-card__submit {
+  background: var(--clr-secondary-100);
+  color: var(--clr-neutral-100);
+  font-weight: var(--fw-bold);
   width: 100%;
+  border: none;
+  padding: 0.75rem 0;
+  border-radius: 0.75rem;
+  box-shadow: 0px 15px 40px -15px var(--clr-secondary-100);
+  margin-bottom: 1.5rem;
+  cursor: pointer;
+  transition: opacity 0.5s;
+}
+
+.order-card__submit:hover,
+.order-card__submit:focus {
+  opacity: 0.5;
+  text-decoration: none;
+}
+
+.order-card__cancelOrder {
+  color: var(--clr-neutral-400);
+  font-weight: var(--fw-black);
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: color 0.5s;
+}
+
+.order-card__cancelOrder:hover {
+  color: var(--clr-neutral-600);
+}
+
+.order-card__planType,
+.order-card__planPrice,
+.order-card__changePlan,
+button,
+.order-card__cancelOrder {
+  font-size: clamp(0.9rem, calc(-0.25rem + 3vw), 1rem);
 }
 
 .attribution {
@@ -173,8 +212,16 @@ body {
 
 /* ====== Media Queries ====== */
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 450px) {
   body {
     background-image: url(images/pattern-background-desktop.svg);
+  }
+
+  .order-card__content {
+    padding: var(--content-padding);
+  }
+
+  .order-card__detailsContainer {
+    padding: 1.5rem;
   }
 }
