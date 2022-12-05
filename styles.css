@@ -109,6 +109,17 @@ body {
 
 .order-card__content {
   padding: 2rem 1.75rem;
+  animation: 4s scrollUp;
+}
+
+@keyframes scrollUp {
+  0% {
+    transform: translateY(435px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
 }
 
 .order-card__introText {
