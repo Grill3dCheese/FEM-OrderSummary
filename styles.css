@@ -197,8 +197,8 @@ body {
 .order-card__planType,
 .order-card__planPrice,
 .order-card__changePlan,
-button,
-.order-card__cancelOrder {
+.order-card__cancelOrder,
+button {
   font-size: clamp(0.9rem, calc(-0.25rem + 3vw), 1rem);
 }
 
